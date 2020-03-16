@@ -1,31 +1,35 @@
-# ÅäÖÃ dev »·¾³
+# é…ç½® dev ç¯å¢ƒ
+server:
+    port: 7070
 spring:
     profiles: dev
-    application:
-        name: abcms-eurekaServer-config
-server:
-    port: 8100
+# æŒ‡å®šå½“å‰å¾®æœåŠ¡å¯¹å¤–æš´éœ²çš„åç§°
+application:
+    name: abcmsc-consumer-depart
 eureka:
-    instance:
-        hostname: localhost # Ö¸¶¨ Eureka Ö÷»ú
+# æŒ‡å®š eureka æœåŠ¡ä¸­å¿ƒ
     client:
-        register-with-eureka: false # Ö¸¶¨ÊÇ·ñÏò×¢²áÖĞĞÄ×¢²á×Ô¼º
-        fetch-registry: false # Ö¸¶¨´Ë¿Í»§¶ËÊÇ·ñÄÜ¹»»ñÈ¡ eureka ×¢²áĞÅÏ¢
-    service-url: # ±©Â¶·şÎñÖĞĞÄµØÖ·
-        defaultZone: http://localhost:8100/eureka
+        service-url:
+            defaultZone: http://localhost.com:8001/eureka
+# å¼€å¯ Feign å¯¹ Hystrix çš„æ”¯æŒ
+feign:
+    hystrix:
+        enabled: true
 ---
-# ÅäÖÃ test »·¾³
+# é…ç½® test ç¯å¢ƒ
+server:
+    port: 9090
 spring:
     profiles: test
-    application:
-        name: abcms-eurekaServer-config
-server: 
-    port: 8200
+# æŒ‡å®šå½“å‰å¾®æœåŠ¡å¯¹å¤–æš´éœ²çš„åç§°
+application:
+    name: abcmsc-consumer-depart
 eureka:
-    instance:
-        hostname: eureka8002.com # Ö¸¶¨ Eureka Ö÷»ú
+# æŒ‡å®š eureka æœåŠ¡ä¸­å¿ƒ
     client:
-        register-with-eureka: false # Ö¸¶¨ÊÇ·ñÏò×¢²áÖĞĞÄ×¢²á×Ô¼º
-        fetch-registry: false # Ö¸¶¨´Ë¿Í»§¶ËÊÇ·ñÄÜ¹»»ñÈ¡ eureka ×¢²áĞÅÏ¢
-    service-url: # ±©Â¶·şÎñÖĞĞÄµØÖ·
-        defaultZone: http://localhost:8200/eureka
+        service-url:
+        defaultZone: http://localhost.com:8002/eureka
+# å¼€å¯ Feign å¯¹ Hystrix çš„æ”¯æŒ
+feign:
+    hystrix:
+        enabled: true

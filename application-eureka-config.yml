@@ -1,4 +1,4 @@
-# ÅäÖÃ dev »·¾³
+# é…ç½® dev ç¯å¢ƒ
 spring:
     profiles: dev
     application:
@@ -7,14 +7,14 @@ server:
     port: 8100
 eureka:
     instance:
-        hostname: localhost # Ö¸¶¨ Eureka Ö÷»ú
+        hostname: localhost # æŒ‡å®š Eureka ä¸»æœº
     client:
-        register-with-eureka: false # Ö¸¶¨ÊÇ·ñÏò×¢²áÖĞĞÄ×¢²á×Ô¼º
-        fetch-registry: false # Ö¸¶¨´Ë¿Í»§¶ËÊÇ·ñÄÜ¹»»ñÈ¡ eureka ×¢²áĞÅÏ¢
-    service-url: # ±©Â¶·şÎñÖĞĞÄµØÖ·
+        register-with-eureka: false # æŒ‡å®šæ˜¯å¦å‘æ³¨å†Œä¸­å¿ƒæ³¨å†Œè‡ªå·±
+        fetch-registry: false # æŒ‡å®šæ­¤å®¢æˆ·ç«¯æ˜¯å¦èƒ½å¤Ÿè·å– eureka æ³¨å†Œä¿¡æ¯
+    service-url: # æš´éœ²æœåŠ¡ä¸­å¿ƒåœ°å€
         defaultZone: http://localhost:8100/eureka
 ---
-# ÅäÖÃ test »·¾³
+# é…ç½® test ç¯å¢ƒ
 spring:
     profiles: test
     application:
@@ -23,9 +23,9 @@ server:
     port: 8200
 eureka:
     instance:
-        hostname: eureka8002.com # Ö¸¶¨ Eureka Ö÷»ú
+        hostname: eureka8002.com # æŒ‡å®š Eureka ä¸»æœº
     client:
-        register-with-eureka: false # Ö¸¶¨ÊÇ·ñÏò×¢²áÖĞĞÄ×¢²á×Ô¼º
-        fetch-registry: false # Ö¸¶¨´Ë¿Í»§¶ËÊÇ·ñÄÜ¹»»ñÈ¡ eureka ×¢²áĞÅÏ¢
-    service-url: # ±©Â¶·şÎñÖĞĞÄµØÖ·
+        register-with-eureka: false # æŒ‡å®šæ˜¯å¦å‘æ³¨å†Œä¸­å¿ƒæ³¨å†Œè‡ªå·±
+        fetch-registry: false # æŒ‡å®šæ­¤å®¢æˆ·ç«¯æ˜¯å¦èƒ½å¤Ÿè·å– eureka æ³¨å†Œä¿¡æ¯
+    service-url: # æš´éœ²æœåŠ¡ä¸­å¿ƒåœ°å€
         defaultZone: http://localhost:8200/eureka

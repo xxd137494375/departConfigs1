@@ -1,31 +1,61 @@
-# ÅäÖÃ dev »·¾³
+
+server:
+    port: 8400
+    
+# é…ç½® dev ç¯å¢ƒ
 spring:
     profiles: dev
     application:
-        name: abcms-eurekaServer-config
-server:
-    port: 8100
+        name: abcmsc-provider-depart
+    # é…ç½® spring-data-jpa
+    jpa:
+        # æŒ‡å®šæ˜¯å¦åœ¨ Spring å®¹å™¨å¯åŠ¨æ—¶åˆ›å»ºè¡¨ï¼Œé»˜è®¤ä¸º false
+        generate-ddl: true
+        # æŒ‡å®šæ˜¯å¦åœ¨æ§åˆ¶å°æ˜¾ç¤º SQL è¯­å¥ï¼Œé»˜è®¤ä¸º false
+        show-sql: true
+        # æŒ‡å®šåº”ç”¨é‡å¯æ—¶ä¸é‡æ–°æ›´æ–°è¡¨
+        hibernate:
+            ddl-auto: none
+    # é…ç½®æ•°æ®æº
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql:///test02?useUnicode=true&amp;characterEncoding=UTF-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        
 eureka:
-    instance:
-        hostname: localhost # Ö¸¶¨ Eureka Ö÷»ú
+    # æŒ‡å®š eureka æœåŠ¡ä¸­å¿ƒ
     client:
-        register-with-eureka: false # Ö¸¶¨ÊÇ·ñÏò×¢²áÖĞĞÄ×¢²á×Ô¼º
-        fetch-registry: false # Ö¸¶¨´Ë¿Í»§¶ËÊÇ·ñÄÜ¹»»ñÈ¡ eureka ×¢²áĞÅÏ¢
-    service-url: # ±©Â¶·şÎñÖĞĞÄµØÖ·
-        defaultZone: http://localhost:8100/eureka
+        service-url:
+            defaultZone: http://localhost:8000/eureka/
 ---
-# ÅäÖÃ test »·¾³
+# é…ç½® test ç¯å¢ƒ
+server:
+    port: 8500
 spring:
     profiles: test
+    # æŒ‡å®šå½“å‰å¾®æœåŠ¡å¯¹å¤–æš´éœ²çš„åç§°
     application:
-        name: abcms-eurekaServer-config
-server: 
-    port: 8200
+        name: abcmsc-provider-depart
+    # é…ç½® spring-data-jpa
+    jpa:
+        # æŒ‡å®šæ˜¯å¦åœ¨ Spring å®¹å™¨å¯åŠ¨æ—¶åˆ›å»ºè¡¨ï¼Œé»˜è®¤ä¸º false
+        generate-ddl: true
+        # æŒ‡å®šæ˜¯å¦åœ¨æ§åˆ¶å°æ˜¾ç¤º SQL è¯­å¥ï¼Œé»˜è®¤ä¸º false
+        show-sql: true
+        # æŒ‡å®šåº”ç”¨é‡å¯æ—¶ä¸é‡æ–°æ›´æ–°è¡¨
+        hibernate:
+            
+    # é…ç½®æ•°æ®æº
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql:///test03?useUnicode=true&amp;characterEncoding=UTF-8
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
 eureka:
-    instance:
-        hostname: eureka8002.com # Ö¸¶¨ Eureka Ö÷»ú
+    # æŒ‡å®š eureka æœåŠ¡ä¸­å¿ƒ
     client:
-        register-with-eureka: false # Ö¸¶¨ÊÇ·ñÏò×¢²áÖĞĞÄ×¢²á×Ô¼º
-        fetch-registry: false # Ö¸¶¨´Ë¿Í»§¶ËÊÇ·ñÄÜ¹»»ñÈ¡ eureka ×¢²áĞÅÏ¢
-    service-url: # ±©Â¶·şÎñÖĞĞÄµØÖ·
-        defaultZone: http://localhost:8200/eureka
+        service-url:
+            defaultZone: http://localhost:8000/eureka/
